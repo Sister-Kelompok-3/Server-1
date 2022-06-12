@@ -7,8 +7,8 @@ use CodeIgniter\Model;
 class BarangModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'barangs';
-    protected $primaryKey       = 'id';
+    protected $table            = 'tb_master_barang';
+    protected $primaryKey       = 'kode_barang';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';

@@ -50,7 +50,7 @@ class BarangController extends ResourceController
         $model->insert([
             'nama_barang' => $this->request->getPost('nama_barang'),
             'satuan' => $this->request->getPost('satuan'),
-            'stok_barang' => $this->request->getPost('stok_barang')
+            'stok' => $this->request->getPost('stok')
         ]);
     }
 
@@ -66,7 +66,7 @@ class BarangController extends ResourceController
         $model->update($id, [
             'nama_barang' => $this->request->getPost('nama_barang'),
             'satuan' => $this->request->getPost('satuan'),
-            'stok_barang' => $this->request->getPost('stok_barang')
+            'stok' => $this->request->getPost('stok')
         ]);
     }
 
@@ -82,7 +82,7 @@ class BarangController extends ResourceController
         $model->update($id, [
             'nama_barang' => $this->request->getPost('nama_barang'),
             'satuan' => $this->request->getPost('satuan'),
-            'stok_barang' => $this->request->getPost('stok_barang')
+            'stok' => $this->request->getPost('stok')
         ]);
     }
 

@@ -40,15 +40,12 @@ $routes->resource('barang');
 $routes->resource('barang_masuk');
 $routes->resource('barang_detail');
 
-//barang
-$routes->post('/barang/create', 'barang::create');
+$routes->post('/create', 'barang::create');
 $routes->delete('/delete', 'barang::delete');
 
-//transaksi
-$routes->post('/barang_masuk/create', 'barang_masuk::create');
+$routes->post('/create', 'barang_masuk::create');
 $routes->delete('/delete', 'barang_masuk::delete');
 
-//detail_transaksi
 $routes->post('/barang_detail/create', 'barang_detail::create');
 $routes->delete('/delete', 'barang_detail::delete');
 

@@ -5,6 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\RESTful\ResourceController;
 use CodeIgniter\API\ResponseTrait;
 use App\Models\DetailModel;
+use CodeIgniter\HTTP\Request;
 
 class Barang_detail extends ResourceController
 {

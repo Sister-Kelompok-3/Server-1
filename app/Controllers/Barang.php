@@ -17,7 +17,7 @@ class Barang extends ResourceController
         return $this->respond($data);
     }
     // create
-    public function create_barang()
+    public function create()
     {
         $model = new BarangModel();
         $data = [
@@ -36,7 +36,7 @@ class Barang extends ResourceController
         return $this->respondCreated($response);
     }
     // single user
-    public function show_barang($kode_barang = null)
+    public function show($kode_barang = null)
     {
         $model = new BarangModel();
         $data = $model->where('kode_barang', $kode_barang)->first();
@@ -47,7 +47,7 @@ class Barang extends ResourceController
         }
     }
     // update
-    public function update_barang($kode_barang = null)
+    public function update($kode_barang = null)
     {
         $model = new BarangModel();
         $kode_barang = $this->request->getVar('kode_barang');
@@ -67,7 +67,7 @@ class Barang extends ResourceController
         return $this->respond($response);
     }
     // delete
-    public function delete_barang($kode_barang = null)
+    public function delete($kode_barang = null)
     {
         $model = new BarangModel();
         $data = $model->where('kode_barang', $kode_barang)->delete($kode_barang);

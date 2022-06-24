@@ -21,7 +21,7 @@ class Barang_masuk extends ResourceController
     {
         $model = new TransaksiModel();
         $data = [
-            'id_transaksi' => $this->request->getVar('id_transaksi'),
+            // 'id_transaksi' => $this->request->getVar('id_transaksi'),
             'tanggal' => $this->request->getVar('tanggal'),
             'lokasi'  => $this->request->getVar('lokasi'),
         ];

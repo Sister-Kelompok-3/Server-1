@@ -69,8 +69,10 @@ class Barang extends ResourceController
     // delete
     public function delete($kode_barang = null)
     {
+        // $memberModel = new MemberModel();
+        // $member = $memberModel->delete($id)
         $model = new BarangModel();
-        $data = $model->where('kode_barang', $kode_barang)->delete($kode_barang);
+        $data = $model->delete($kode_barang);
         if ($data) {
             $model->delete($kode_barang);
             $response = [

@@ -37,21 +37,21 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/barang', 'barang::index');
-$routes->get('/detail', 'barang_detail::index');
+$routes->get('/detail_transaksi', 'barang_detail::index');
 $routes->get('/barang_masuk', 'barang_masuk::index');
+$routes->get('/barang_cek', 'pages::insert_barang');
 
 $routes->post('/add_barang', 'barang::create');
-$routes->delete('/delete_barang', 'barang::delete');
-$routes->put('/update_barang', 'barang::update');
+$routes->delete('/delete_barang', 'barang::delete/$1');
+$routes->get('/update_barang', 'barang::update/$1');
 
 $routes->post('/add_transaksi', 'barang_masuk::create');
-$routes->delete('/delete_transaksi', 'barang_masuk::delete');
+$routes->delete('/delete_transaksi', 'barang_masuk::delete/$1');
 $routes->put('/update_transaksi', 'barang_masuk::update');
 
-$routes->post('/add_detail', 'barang_detail::create');
-$routes->delete('/delete_detail', 'barang_detail::delete');
-$routes->put('/update_detail', 'barang_detail::update');
-
+$routes->post('/add_detail_transaksi', 'barang_detail::create');
+$routes->delete('/delete_detail_transaksi', 'barang_detail::delete/$1');
+$routes->put('/update_detail_transaksi', 'barang_detail::update');
 
 /*
  * --------------------------------------------------------------------

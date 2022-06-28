@@ -8,5 +8,5 @@ class BarangModel extends Model
 {
     protected $table = 'tb_master_barang';
     protected $primaryKey = 'kode_barang';
-    protected $allowedFields = ['kode_barang', 'nama_barang', 'satuan', 'stok'];
+    protected $allowedFields = ['nama_barang', 'satuan', 'stok'];
 }

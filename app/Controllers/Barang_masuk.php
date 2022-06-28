@@ -8,7 +8,18 @@ use App\Models\TransaksiModel;
 
 class Barang_masuk extends ResourceController
 {
-    use ResponseTrait;
+    // use ResponseTrait;
+    // private $host = "localhost";
+    // private $dbname = "dbs_server1";
+    // private $conn;
+
+    // // koneksi ke database mysql di server
+    // private $driver = "mysql";
+    // private $user = "root";
+    // private $password = "";
+    // private $port = "3306";
+
+
     // all users
     public function index()
     {
@@ -21,7 +32,7 @@ class Barang_masuk extends ResourceController
     {
         $model = new TransaksiModel();
         $data = [
-            // 'id_transaksi' => $this->request->getVar('id_transaksi'),
+            'id_transaksi' => $this->request->getVar('id_transaksi'),
             'tanggal' => $this->request->getVar('tanggal'),
             'lokasi'  => $this->request->getVar('lokasi'),
         ];

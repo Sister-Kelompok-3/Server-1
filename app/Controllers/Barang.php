@@ -35,42 +35,50 @@ class Barang extends ResourceController
         ];
         return $this->respondCreated($response);
     }
-    // single user
-    public function show($kode_barang = null)
-    {
-        $model = new BarangModel();
-        $data = $model->where('kode_barang', $kode_barang)->first();
-        if ($data) {
-            return $this->respond($data);
-        } else {
-            return $this->failNotFound('Data tidak ditemukan.');
-        }
-    }
+    // // single user
+    // public function show($kode_barang = null)
+    // {
+    //     $model = new BarangModel();
+    //     $data = $model->where('kode_barang', $kode_barang)->first();
+    //     if ($data) {
+    //         return $this->respond($data);
+    //     } else {
+    //         return $this->failNotFound('Data tidak ditemukan.');
+    //     }
+    // }
     // update
     public function update($kode_barang = null)
     {
-        $model = new BarangModel();
-        $kode_barang = $this->request->getVar('kode_barang');
-        $data = [
-            'nama_barang' => $this->request->getVar('nama_barang'),
-            'satuan'  => $this->request->getVar('satuan'),
-            'stok'  => $this->request->getVar('stok'),
-        ];
-        $model->update($kode_barang, $data);
-        $response = [
-            'status'   => 200,
-            'error'    => null,
-            'messages' => [
-                'success' => 'Data produk berhasil diubah.'
-            ]
-        ];
-        return $this->respond($response);
+        $this->barang->update($kode_barang, [
+            'nama_barang' => $this->request->getPost('nama_barang'),
+            'satuan' => $this->request->getPost('satuan'),
+            'stok' => $this->request->getPost('stok'),
+        ]);
+
+        return redirect('BarangModel')->with('success', 'Data Updated Successfully');
+
+
+
+        // $kode_barang = $this->request->getVar('kode_barang');
+        // $data = [
+        //     'nama_barang' => $this->request->getVar('nama_barang'),
+        //     'satuan'  => $this->request->getVar('satuan'),
+        //     'stok'  => $this->request->getVar('stok'),
+        // ];
+        // $model->update($kode_barang, $data);
+        // $response = [
+        //     'status'   => 200,
+        //     'error'    => null,
+        //     'messages' => [
+        //         'success' => 'Data produk berhasil diubah.'
+        //     ]
+        // ];
+        // return $this->respond($response);
     }
     // delete
     public function delete($kode_barang = null)
     {
-        // $memberModel = new MemberModel();
-        // $member = $memberModel->delete($id)
+
         $model = new BarangModel();
         $data = $model->delete($kode_barang);
         if ($data) {

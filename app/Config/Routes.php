@@ -42,15 +42,15 @@ $routes->get('/barang_masuk', 'barang_masuk::index');
 $routes->get('/barang_cek', 'pages::insert_barang');
 
 $routes->post('/add_barang', 'barang::create');
-$routes->delete('/delete_barang', 'barang::delete/$1');
+$routes->delete('/delete_barang/(:segment)', 'barang::delete/$1');
 $routes->get('/update_barang', 'barang::update/$1');
 
 $routes->post('/add_transaksi', 'barang_masuk::create');
-$routes->delete('/delete_transaksi', 'barang_masuk::delete/$1');
+$routes->delete('/delete_transaksi/(:segment)', 'barang_masuk::delete/$1');
 $routes->put('/update_transaksi', 'barang_masuk::update');
 
 $routes->post('/add_detail_transaksi', 'barang_detail::create');
-$routes->delete('/delete_detail_transaksi', 'barang_detail::delete/$1');
+$routes->delete('/delete_detail_transaksi/(:segment)', 'barang_detail::delete/$1');
 $routes->put('/update_detail_transaksi', 'barang_detail::update');
 
 /*

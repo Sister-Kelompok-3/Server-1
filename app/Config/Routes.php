@@ -41,7 +41,7 @@ $routes->get('/detail_transaksi', 'barang_detail::index');
 $routes->get('/barang_masuk', 'barang_masuk::index');
 $routes->get('/barang_cek', 'pages::insert_barang');
 
-$routes->post('/add_barang', 'barang::create');
+$routes->post('/add_barang', 'APIServer::tambah_barang');
 $routes->delete('/delete_barang/(:segment)', 'barang::delete/$1');
 $routes->get('/update_barang', 'barang::update/$1');
 

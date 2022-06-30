@@ -1,18 +1,9 @@
 <?php
 
-namespace App\Controllers;
-
-use CodeIgniter\RESTful\ResourceController;
-use CodeIgniter\API\ResponseTrait;
 use App\Models\BarangModel;
-use PDO;
 
-class Home extends BaseController
+class APIserver
 {
-    // public function index()
-    // {
-    //     return view('pages/barang');
-    // }
     private $host = "localhost";
     private $dbname = "dbs_server1";
     private $conn;
@@ -24,19 +15,16 @@ class Home extends BaseController
     private $port = "3306";
 
 
-
-
-
-    // public function __construct()
-    // {
-    //     try {
-    //         if ($this->driver == 'mysql') {
-    //             $this->conn = new  PDO("mysql:host=$this->host;port=$this->port;dbname=$this->dbname;charset=utf8", $this->user, $this->password);
-    //         }
-    //     } catch (PDOException $e) {
-    //         echo "ANJING";
-    //     }
-    // }
+    public function __construct()
+    {
+        try {
+            if ($this->driver == 'mysql') {
+                $this->conn = new  PDO("mysql:host=$this->host;port=$this->port;dbname=$this->dbname;charset=utf8", $this->user, $this->password);
+            }
+        } catch (PDOException $e) {
+            echo "ANJING";
+        }
+    }
 
     public function filter($data)
     {
